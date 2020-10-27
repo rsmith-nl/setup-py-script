@@ -5,13 +5,13 @@ Simple setup for Python scripts
 :tags: python, setup, scripts
 :author: Roland Smith
 
-.. Last modified: 2020-10-26T21:43:43+0100
+.. Last modified: 2020-10-27T18:09:32+0100
 
 Introduction
 ============
 
 Installing Python scripts (as opposed to modules) is a too involved using
-distutils. That doesn't take into account zipped archives and scripts using
+distutils/setuptools. Those do not take into account zipped archives and scripts using
 a GUI toolkit.
 
 So this setup script is an attempt to do things differently.
@@ -19,10 +19,11 @@ The goal is to provide (simple) installation for standalone scripts that may
 or may not be compressed and that may or may not use a GUI.
 
 
-Sysconfig
-=========
+Sysconfig data
+==============
 
-The ``sysconfig`` module yields information about paths.
+The ``sysconfig`` module yields information about paths on the system Python
+is installed on.
 On FreeBSD UNIX (an example of a “posix” system):
 
 .. code-block:: python
@@ -35,7 +36,7 @@ On FreeBSD UNIX (an example of a “posix” system):
     Out[3]: 'posix'
 
     In [4]: sysconfig.get_scheme_names()
-    Out[4]: 
+    Out[4]:
     ('nt',
     'nt_user',
     'osx_framework_user',
@@ -61,6 +62,7 @@ On ms-windows:
     'C:\\Users\\Roland Smith\\AppData\\Roaming\\Python\\Python37\\Scripts'
     >>> sysconfig.get_path("scripts", os.name)
     'C:\\_LocalData\\Python3\\Scripts'
+
 
 Installation scheme
 ===================
