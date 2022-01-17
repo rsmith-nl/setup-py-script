@@ -5,7 +5,7 @@
 # Copyright © 2020 R.F. Smith <rsmith@xs4all.nl>
 # SPDX-License-Identifier: MIT
 # Created: 2020-10-25T12:18:04+0100
-# Last modified: 2022-01-17T10:15:12+0100
+# Last modified: 2022-01-17T22:54:04+0100
 """Script to install self-contained scripts for the local user."""
 
 import os
@@ -37,7 +37,7 @@ def main():
     install = "install" in [a.lower() for a in sys.argv]
     if install:
         if not os.path.exists(destdir):
-            os.mkdir(destdir)
+            os.makedirs(destdir)
     else:
         print("(Use the 'install' argument to actually install scripts.)")
     do_install(install, scripts, destdir, destdir2)
