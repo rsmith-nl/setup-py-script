@@ -5,7 +5,7 @@ Simple setup for Python scripts
 :tags: python, setup, scripts
 :author: Roland Smith
 
-.. Last modified: 2022-01-17T10:11:34+0100
+.. Last modified: 2022-01-17T10:23:54+0100
 
 Introduction
 ============
@@ -27,7 +27,7 @@ Usage
 
 1) Copy ``simple.py`` or ``self-contained.py`` to ``setup.py`` in your
    project.
-2) Edit the ``scripts`` list to contain the abovementioned configuration data.
+2) Edit the ``scripts`` list to contain the configuration data mentioned below.
 
 
 Project structure for self-contained scripts
@@ -54,15 +54,19 @@ Configuration data
 
 On the ``nt`` platform, installed Python scripts can have two different
 extensions;
+
 * ``.py`` for a normal Python command-line script.
-* ``.pyw`` for a Python script that uses a GUI toolkit
+  This is associated with ``python.exe``.
+* ``.pyw`` for a Python script that uses a GUI toolkit. This is associated
+  with ``pythonw.exe``, so that it doesn't show a superfluous ``cmd.exe``
+  window on startup.
 
 On ``posix``, installed scripts do not have an extension, and GUI scripts or
 self-contained archives are handled automatically.
 
 So, to prevent a whole lot of detection logic (there are e.g. many possible
 GUI toolkits), the developer has to specify a 2-tuple or 4-tuple for each
-script that has to be installed.
+script that has to be installed. This is called ``scripts``.
 
 For ``simple.py`` this tuple contains:
 
@@ -73,7 +77,7 @@ For ``simple.py`` this tuple contains:
 For ``self-contained.py`` this tuple contains:
 
 * The base name of the installed program.
-* The name of the module it should contain.
+* The name of the module (directory) it should contain.
 * The name of the main file for the program. This should run the application
 * the extension that has to be used for the installed script on the ``nt``
   platform.
