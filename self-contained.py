@@ -3,9 +3,10 @@
 # vim:fileencoding=utf-8:fdm=marker:ft=python
 #
 # Copyright © 2020 R.F. Smith <rsmith@xs4all.nl>
+# SPDX-License-Identifier: MIT
 # Created: 2020-10-25T12:18:04+0100
-# Last modified: 2020-12-29T16:44:37+0100
-"""Script to install scripts for the local user."""
+# Last modified: 2022-01-17T10:15:12+0100
+"""Script to install self-contained scripts for the local user."""
 
 import os
 import py_compile
