@@ -5,7 +5,7 @@
 # Copyright © 2020 R.F. Smith <rsmith@xs4all.nl>
 # SPDX-License-Identifier: MIT
 # Created: 2020-10-25T12:18:04+0100
-# Last modified: 2022-01-22T09:25:07+0100
+# Last modified: 2022-01-22T14:54:26+0100
 """Script to install self-contained scripts for the local user."""
 
 import os
@@ -18,10 +18,10 @@ import zipfile as z
 
 
 # What to install; (name, module, main, nt-extension)
-SCRIPTS = [
+SCRIPTS = (
     ("foo", "foomod", "console.py", ".py"),
     ("foo-gui", "foomod", "gui.py", ".pyw"),
-]
+)
 
 
 def main():
