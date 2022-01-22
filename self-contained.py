@@ -5,7 +5,7 @@
 # Copyright © 2020 R.F. Smith <rsmith@xs4all.nl>
 # SPDX-License-Identifier: MIT
 # Created: 2020-10-25T12:18:04+0100
-# Last modified: 2022-01-17T22:54:04+0100
+# Last modified: 2022-01-22T09:25:07+0100
 """Script to install self-contained scripts for the local user."""
 
 import os
@@ -17,13 +17,15 @@ import tempfile
 import zipfile as z
 
 
+# What to install; (name, module, main, nt-extension)
+SCRIPTS = [
+    ("foo", "foomod", "console.py", ".py"),
+    ("foo-gui", "foomod", "gui.py", ".pyw"),
+]
+
+
 def main():
     """Entry point for the setup script."""
-    # What to install; (name, module, main, nt-extension)
-    scripts = [
-        ("foo", "foomod", "console.py", ".py"),
-        ("foo-gui", "foomod", "gui.py", ".pyw"),
-    ]
     # Preparation
     if os.name == "posix":
         destdir = sysconfig.get_path("scripts", "posix_user")
@@ -40,7 +42,7 @@ def main():
             os.makedirs(destdir)
     else:
         print("(Use the 'install' argument to actually install scripts.)")
-    do_install(install, scripts, destdir, destdir2)
+    do_install(install, SCRIPTS, destdir, destdir2)
 
 
 def do_install(install, scripts, destdir, destdir2):
