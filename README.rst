@@ -5,7 +5,7 @@ Simple setup for Python scripts
 :tags: python, setup, scripts
 :author: Roland Smith
 
-.. Last modified: 2022-01-17T10:23:54+0100
+.. Last modified: 2022-01-22T09:37:09+0100
 
 Introduction
 ============
@@ -25,9 +25,21 @@ so they can be installed as a single script.
 Usage
 =====
 
+To apply it to your project:
+
 1) Copy ``simple.py`` or ``self-contained.py`` to ``setup.py`` in your
    project.
-2) Edit the ``scripts`` list to contain the configuration data mentioned below.
+2) Edit the ``SCRIPTS`` list to contain the configuration data mentioned below.
+
+To *use* it in your project:
+
+Go to your project directory in a shell or ``cmd.exe`` window.
+Depending on how your Python is set up, you should use ``python`` or ``python3``.
+If you also have Python 2.7 installed, use ``python3``.
+Run ``python setup.py`` to see the options and where the scripts would be
+installed.
+Run ``python setup.py install`` to install the scripts.
+
 
 
 Project structure for self-contained scripts
