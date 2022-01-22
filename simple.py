@@ -5,7 +5,7 @@
 # Copyright © 2020 R.F. Smith <rsmith@xs4all.nl>
 # SPDX-License-Identifier: MIT
 # Created: 2020-10-25T12:18:04+0100
-# Last modified: 2022-01-22T09:38:59+0100
+# Last modified: 2022-01-22T09:39:49+0100
 """Script to install scripts for the local user."""
 
 import os
@@ -14,7 +14,7 @@ import sys
 import sysconfig
 
 # What to install
-scripts = [("cmdline.py", ".py"), ("tk-gui.py", ".pyw")]
+SCRIPTS = [("cmdline.py", ".py"), ("tk-gui.py", ".pyw")]
 
 # Preparation
 if os.name == "posix":
@@ -37,7 +37,7 @@ elif cmd == "uninstall":
 else:
     print(f"Usage {sys.argv[0]} [install|uninstall]")
 # Actual (de)installation.
-for script, nt_ext in scripts:  # noqa
+for script, nt_ext in SCRIPTS:  # noqa
     base = os.path.splitext(script)[0]
     if os.name == "posix":
         destname = destdir + os.sep + base
