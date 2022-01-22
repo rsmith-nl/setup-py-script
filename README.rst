@@ -5,7 +5,7 @@ Simple setup for Python scripts
 :tags: python, setup, scripts
 :author: Roland Smith
 
-.. Last modified: 2022-01-22T09:37:09+0100
+.. Last modified: 2022-01-22T15:44:13+0100
 
 Introduction
 ============
@@ -29,17 +29,20 @@ To apply it to your project:
 
 1) Copy ``simple.py`` or ``self-contained.py`` to ``setup.py`` in your
    project.
-2) Edit the ``SCRIPTS`` list to contain the configuration data mentioned below.
+2) On UNIX-like systems, make sure ``setup.py`` is executable.
+3) Edit the ``SCRIPTS`` tuple to contain the configuration data mentioned below.
+4) Ensure that the installed name(s) for self-contained scripts are ignored by
+   your revision control software.
 
 To *use* it in your project:
 
 Go to your project directory in a shell or ``cmd.exe`` window.
-Depending on how your Python is set up, you should use ``python`` or ``python3``.
-If you also have Python 2.7 installed, use ``python3``.
-Run ``python setup.py`` to see the options and where the scripts would be
+Run ``./setup.py`` to see the options and where the scripts would be
 installed.
-Run ``python setup.py install`` to install the scripts.
-
+Run ``./setup.py install`` to install the scripts.
+Run ``./setup.py uninstall`` to uninstall the scripts when they are installed.
+For self-contained scripts, run ``./setup.py clean`` to remove generated
+files.
 
 
 Project structure for self-contained scripts
