@@ -5,7 +5,10 @@ Simple setup for Python scripts
 :tags: python, setup, scripts
 :author: Roland Smith
 
-.. Last modified: 2022-01-22T15:44:13+0100
+.. Last modified: 2022-01-29T22:28:03+0100
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
 
 Introduction
 ============
