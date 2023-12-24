@@ -5,7 +5,7 @@ Simple setup for Python scripts
 :tags: python, setup, scripts
 :author: Roland Smith
 
-.. Last modified: 2022-01-29T22:28:03+0100
+.. Last modified: 2023-12-25T00:32:24+0100
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
@@ -113,27 +113,16 @@ On FreeBSD UNIX (an example of a “posix” system):
 
 .. code-block:: python
 
-    In [1]: import sysconfig
-
-    In [2]: import os
-
-    In [3]: os.name
-    Out[3]: 'posix'
-
-    In [4]: sysconfig.get_scheme_names()
-    Out[4]:
-    ('nt',
-    'nt_user',
-    'osx_framework_user',
-    'posix_home',
-    'posix_prefix',
-    'posix_user')
-
-    In [5]: sysconfig.get_path("scripts", 'posix_home')
-    Out[5]: '/usr/local/bin'
-
-    In [6]: sysconfig.get_path("scripts", 'posix_user')
-    Out[6]: '/home/rsmith/.local/bin'
+    >>> import sysconfig
+    >>> import os
+    >>> os.name
+    'posix'
+    >>> sysconfig.get_scheme_names()
+    ('nt', 'nt_user', 'osx_framework_user', 'posix_home', 'posix_prefix', 'posix_user')
+    >>> sysconfig.get_path("scripts", 'posix_home')
+    '/usr/local/bin'
+    >>> sysconfig.get_path("scripts", 'posix_user')
+    '/home/rsmith/.local/bin'
 
 On ms-windows:
 
