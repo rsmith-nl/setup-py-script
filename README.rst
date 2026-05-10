@@ -5,7 +5,7 @@ Simple setup for Python scripts
 :tags: python, setup, scripts
 :author: Roland Smith
 
-.. Last modified: 2023-12-25T00:32:24+0100
+.. Last modified: 2026-05-10T13:48:07+0200
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
@@ -23,6 +23,13 @@ or may not be compressed and that may or may not use a GUI.
 
 Scripts that use their own module are wrapped up in a self-contained zip-file,
 so they can be installed as a single script.
+
+
+No AI policy
+============
+
+This code is by a human and for humans.
+"AI" / LLM-generated rewrites and additions are not welcome.
 
 
 Usage
